@@ -130,5 +130,5 @@ void Socket::setKeepAlive(bool on)
 void Socket::setCongestionControl(const char* name)
 {
   int ret = ::setsockopt(sockfd_, IPPROTO_TCP, TCP_CONGESTION, name, sizeof(name));
-  assert(ret == 0);
+  assert(ret == 0); (void)ret;
 }
