@@ -290,6 +290,11 @@ void TcpConnection::setTcpNoDelay(bool on)
   socket_->setTcpNoDelay(on);
 }
 
+void TcpConnection::setCongestionControl(const char* name)
+{
+  socket_->setCongestionControl(name);
+}
+
 void TcpConnection::startRead()
 {
   loop_->runInLoop(std::bind(&TcpConnection::startReadInLoop, this));

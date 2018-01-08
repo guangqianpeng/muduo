@@ -127,3 +127,8 @@ void Socket::setKeepAlive(bool on)
   // FIXME CHECK
 }
 
+void Socket::setCongestionControl(const char* name)
+{
+  int ret = ::setsockopt(sockfd_, IPPROTO_TCP, TCP_CONGESTION, name, sizeof(name));
+  assert(ret == 0);
+}

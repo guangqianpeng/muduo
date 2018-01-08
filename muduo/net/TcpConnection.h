@@ -71,6 +71,7 @@ class TcpConnection : noncopyable,
   void forceClose();
   void forceCloseWithDelay(double seconds);
   void setTcpNoDelay(bool on);
+  void setCongestionControl(const char* name);
   // reading or not
   void startRead();
   void stopRead();

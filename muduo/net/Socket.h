@@ -79,6 +79,8 @@ class Socket : noncopyable
   ///
   void setKeepAlive(bool on);
 
+  void setCongestionControl(const char* name);
+
  private:
   const int sockfd_;
 };
