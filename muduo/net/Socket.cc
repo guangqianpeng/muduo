@@ -131,6 +131,6 @@ void Socket::setCongestionControl(const char* name)
 {
   int ret = ::setsockopt(sockfd_, IPPROTO_TCP, TCP_CONGESTION, name, sizeof(name));
   if (ret != 0) {
-    LOG_SYSFATAL << "set socket congestion " << name << ": ";
+    LOG_SYSFATAL << "set socket congestion " << name;
   }
 }
